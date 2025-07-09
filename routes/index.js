@@ -3,9 +3,10 @@
 
 const express = require("express");
 const router = express.Router();
-const allanRoutes = require("./allan.route");
 
-router.use("/allan", allanRoutes);
+const middleware = require("../middleware");
+const allanRoutes = require("./allan.route");
+router.use("/allan", middleware.one,middleware.two, allanRoutes);
 
 // Exemple de route de test
 router.get("/test", (req, res) => {

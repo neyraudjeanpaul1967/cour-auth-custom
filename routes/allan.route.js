@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+const middleware = require("../middleware");
 const allanCtrl = require("../controllers/allan.controler");
 
-router.get("/bonjour", allanCtrl.bonjour);
+router.get("/bonjour", middleware.three, allanCtrl.bonjour);
 router.get("/aurevoir", allanCtrl.aurevoir);
 
 // API REST

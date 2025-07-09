@@ -17,3 +17,13 @@ exports.two = async (req, res, next) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.three = async (req, res, next) => {
+  try {
+    console.log("3");
+    next();
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
